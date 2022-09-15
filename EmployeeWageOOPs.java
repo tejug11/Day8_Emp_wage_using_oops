@@ -5,23 +5,25 @@ public class EmployeeWageOOPs {
 	public static final int IsPartTime = 2;
 	public static final int employeRatePerHour = 20;
 
-	public void checkWage() {
+	public void usingSwitch() {
 		int employeWages = 0, employeHour = 0;
-		double empCheck = Math.floor(Math.random() * 10) % 3;
-		if (empCheck == IsFullTime) {
+		int employeCheck = (int) Math.floor(Math.random() * 10) % 3;
+		switch (employeCheck) {
+		case IsFullTime:
 			employeHour = 8;
-		} else if (empCheck == IsPartTime) {
-			employeHour = 8;
-		} else {
+			break;
+		case IsPartTime:
+			employeHour = 4;
+			break;
+		default:
 			employeHour = 0;
 		}
-
 		employeWages = employeHour * employeRatePerHour;
 		System.out.println("Employewage: " + employeWages);
 	}
 
 	public static void main(String[] args) {
 		EmployeeWageOOPs e1 = new EmployeeWageOOPs();
-		e1.checkWage();
+		e1.usingSwitch();
 	}
 }
