@@ -17,5 +17,4 @@ public class EmployeeWageOOPs {
 		EmployeeWageOOPs e1 = new EmployeeWageOOPs();
 		e1.attendance();
 	}
-
 }
