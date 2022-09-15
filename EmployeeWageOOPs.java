@@ -1,27 +1,27 @@
 
 public class EmployeeWageOOPs {
 
-	public static final int Emp_present = 1;
-	public static final int Wage_per_hour = 20;
+	public static final int IsFullTime = 1;
+	public static final int IsPartTime = 2;
+	public static final int employeRatePerHour = 20;
 
-	public void dailyWage() {
-
-		double empcheck = Math.floor(Math.random() * 10) % 2;
-		if (empcheck == Emp_present) {
-			System.out.println("Employee is present");
-			int Full_day_hour = 8;
-			int Salary = (Wage_per_hour * Full_day_hour);
-			System.out.println("Total_Salary" + Salary);
+	public void checkWage() {
+		int employeWages = 0, employeHour = 0;
+		double empCheck = Math.floor(Math.random() * 10) % 3;
+		if (empCheck == IsFullTime) {
+			employeHour = 8;
+		} else if (empCheck == IsPartTime) {
+			employeHour = 8;
 		} else {
-			System.out.println("Employee is not present");
-			int Full_day_hour = 0;
-			int Salary = (Wage_per_hour * Full_day_hour);
-			System.out.println("Salary is" + Salary);
+			employeHour = 0;
 		}
+
+		employeWages = employeHour * employeRatePerHour;
+		System.out.println("Employewage: " + employeWages);
 	}
 
 	public static void main(String[] args) {
 		EmployeeWageOOPs e1 = new EmployeeWageOOPs();
-		e1.dailyWage();
+		e1.checkWage();
 	}
 }
